@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Expense Title -->
+        <TextView
+            android:id="@+id/tvExpenseTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Groceries"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_paid"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!-- Amount -->
+        <TextView
+            android:id="@+id/tvExpenseAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="₹1200"
+            android:textSize="16sp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            app:layout_constraintTop_toBottomOf="@id/tvExpenseTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="4dp" />
+
+        <!-- Number of Persons -->
+        <TextView
+            android:id="@+id/tvNumPersons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="3 persons"
+            android:textSize="14sp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            app:layout_constraintTop_toBottomOf="@id/tvExpenseAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="2dp" />
+
+        <!-- Due or Paid Date -->
+        <TextView
+            android:id="@+id/paid_Date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Due: 5 July"
+            android:textSize="14sp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            app:layout_constraintTop_toBottomOf="@id/tvNumPersons"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="2dp" />
+
+        <!-- Paid Label (centered) -->
+        <TextView
+            android:id="@+id/paid_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paid"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:background="@drawable/paid_tag_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Paid Checkbox (only visible when not paid) -->
+        <CheckBox
+            android:id="@+id/checkbox_paid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/green"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
